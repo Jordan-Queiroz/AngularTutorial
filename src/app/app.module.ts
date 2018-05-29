@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RecordsService } from './records.service'
 import { AppComponent } from './app.component';
 import { UpdateComponent } from './update/update.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { UpdateComponent } from './update/update.component';
     UpdateComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [RecordsService],
   bootstrap: [AppComponent]
