@@ -7,7 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  records = []
+
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    
+  }
 }
