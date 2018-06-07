@@ -10,6 +10,8 @@ import { AuthGuard } from './auth.guard';
 import { AuthService } from './auth.service';
 import { UserService } from './user.service';
 import { LogoutComponent } from './logout/logout.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { LogoutComponent } from './logout/logout.component';
     HomeComponent,
     LoginComponent,
     AdminComponent,
-    LogoutComponent
+    LogoutComponent,
+    DashboardComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +35,14 @@ import { LogoutComponent } from './logout/logout.component';
         path: 'admin',
         component: AdminComponent,
         canActivate: [AuthGuard]
+      },
+      {
+        path: 'dashboard',
+        component: DashboardComponent,
+      },
+      {
+        path: 'register',
+        component: RegisterComponent,
       },
       {
         path: 'logout',
