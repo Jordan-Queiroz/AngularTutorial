@@ -20,7 +20,7 @@ export class RegisterComponent implements OnInit {
     const target = event.target;
     const username = target.querySelector('#username').value;
     const password = target.querySelector('#password').value;
-    const cpassword = target.querySelector('#pcassword').value;
+    const cpassword = target.querySelector('#cpassword').value;
 
     if (password != cpassword) {
       errors.push("Passwords do not match");
@@ -28,7 +28,7 @@ export class RegisterComponent implements OnInit {
 
     // More validation
 
-    if (errors.length > 0) {
+    if (errors.length === 0) {
       this.auth.registerUser(username, password).subscribe(data => {
         console.log(data);
 
