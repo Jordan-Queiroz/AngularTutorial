@@ -18,6 +18,8 @@ export class LogoutComponent implements OnInit {
       if (data.success) {
         this.router.navigate(['']);
         this.auth.setLoggedIn(false);
+      } else {
+        window.alert('Some problem')
       }
     })
   }

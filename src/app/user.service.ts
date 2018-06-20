@@ -4,8 +4,9 @@ import { Observable } from 'rxjs';
 
 
 interface myData {
-  message: string,
-  success: boolean
+  email: string
+  quote: string,
+  status: boolean
 }
 
 interface isLoggedIn {
@@ -23,15 +24,15 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  getSomedata() {
-    return this.http.get<myData>('api/database.php')
+  getData() {
+    return this.http.get<myData>('/api/data')
   }
 
   isLoggedIn(): Observable<isLoggedIn> {
-    return this.http.get<isLoggedIn>('/api/isloggedin.php')
+    return this.http.get<isLoggedIn>('/api/isloggedin')
   }
 
   logout() {
-    return this.http.get<logoutStatus>('/api/logout.php');
+    return this.http.get<logoutStatus>('/api/logout');
   }
 }
